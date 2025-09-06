@@ -1,0 +1,41 @@
+.EmojiPickerReact.epr-dark-theme {
+  --epr-emoji-size: 30px;
+  --epr-hover-bg-color: #181a28 !important;
+  --epr-search-input-bg-color: #1e202e;
+  --epr-search-input-bg-color-active: #1e202e;
+  --epr-category-label-bg-color: transparent;
+  --epr-text-color: #ccc;
+  --epr-search-border-color: #297bff;
+  --epr-dark-category-icon-active-color: transparent;
+}
+
+.EmojiPickerReact {
+  display: grid;
+  background-color: #171925 !important;
+  z-index: 555 !important;
+}
+
+.EmojiPickerReact .epr-body {
+  display: flex;
+  border-bottom: 1px solid #181a28;
+  flex-direction: column;
+  z-index: 555 !important;
+}
+
+.epr_-xm0i1t {
+  margin-top: 5px !important;
+}
+
+.EmojiPickerReact .epr-category-nav {
+  display: none !important;
+}
+
+.EmojiPickerReact .epr-category-nav .epr-btn {
+  border-radius: 5px;
+  margin-right: 8px;
+  position: relative;
+}
+
+.EmojiPickerReact .epr-category-nav .epr-btn:last-child {
+  margin-right: 0;
+}

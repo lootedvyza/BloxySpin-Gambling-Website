@@ -1,0 +1,83 @@
+.selector {
+  appearance: none;
+  background: #20222f;
+  border: 1px solid #252839;
+  border-radius: 8px;
+  padding: 22px 10px !important;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  width: 200px;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  text-align-last: center;
+  position: relative;
+}
+
+
+.selectItem {
+  font-size: 16px;
+  margin-top: 6px;
+  color: #ccc;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  line-height: 1.4;
+  margin-left: -4px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.selectItem:first-child {
+  margin-top: 0 !important;
+}
+
+.selectItem svg {
+  margin-left: 0;
+}
+
+.selectItem:hover {
+  color: #ccc;
+  background-color: #202331;
+}
+
+.selectItem:hover .selected {
+  color: #ccc;
+  background-color: transparent;
+}
+
+.selected {
+  color: #ccc !important;
+  background-color: #202331 !important;
+}
+
+.countdown {
+  animation: countdown-stroke 2.5s forwards linear;
+}
+
+.winner-coin {
+  animation: scale-fade-in 150ms forwards;
+}
+
+@keyframes countdown-stroke {
+  from {
+    stroke-dashoffset: 0%;
+  }
+
+  to {
+    stroke-dashoffset: 100%;
+  }
+}
+
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

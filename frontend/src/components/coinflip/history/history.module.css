@@ -1,0 +1,605 @@
+.blurbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modalbackgroundhistory {
+  position: relative;
+  background-color: #131520;
+  border: 1px solid #181a28;
+  border-radius: 5px;
+  padding: 20px;
+  width: 85%;
+  max-width: 700px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+  animation: modalOpen 0.3s forwards;
+}
+
+.closeButton {
+  position: absolute;
+  top: 2px;
+  right: 7px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.historyTitle {
+  display: block;
+  font-size: 1.4rem;
+  color: #ccc;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-right: auto !important;
+}
+
+.coinflips {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+  height: 100%;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #131520;
+}
+
+.coinflips::-webkit-scrollbar {
+  width: 4px !important;
+  background-color: transparent;
+}
+
+.coinflips::-webkit-scrollbar-thumb {
+  background-color: #999ea7;
+  opacity: 0.6;
+  border-radius: 50px;
+}
+
+.coinflips::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.flip {
+  display: grid;
+  grid-template-columns: auto 2fr 1fr auto;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  background: #141621;
+  border: 1px solid #181a28;
+  padding: 1.02rem;
+  border-radius: 8px 8px 11px 8px;
+  position: relative;
+  height: auto;
+  box-sizing: border-box;
+  width: auto;
+  gap: 1rem;
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.player {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerCoin {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 2;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.coinIndicator {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+}
+
+.coinPlaceholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1d2b;
+  color: #0f111c;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.questionMark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.avatar {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 3.3rem;
+  height: 3.3rem;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  transition: border 0.3s;
+}
+
+.coin .avatar {
+  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.coin:hover .avatar {
+  opacity: 1;
+  cursor: auto;
+}
+
+.avatar:hover {
+  border-color: #007bff;
+}
+
+.winner .avatar {
+  border-color: #007bff;
+}
+
+.loser .avatar {
+  opacity: 0.4;
+}
+
+.winnerCoin {
+  width: 3.6rem;
+  height: 3.7rem;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vs {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #b0b8c1;
+}
+
+.winner .coinIndicator {
+  border-color: #007bff;
+}
+
+.loser .coinIndicator {
+  opacity: 0.4;
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  padding: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: flex-start;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.value p {
+  margin-left: 8px;
+  color: #ccc;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+}
+
+.bobuxicon {
+  width: 25px;
+  width: 25px;
+}
+
+.itemholder {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 10px;
+  gap: 1rem;
+}
+
+.itemholder > * {
+  margin-left: -2.6rem;
+}
+
+.itemWrapper {
+  border: 2.8px solid #1e2136;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  overflow: visible;
+  background-color: #151727;
+  margin-right: 0.6rem;
+}
+
+.backgroundImage {
+  width: 3.7rem;
+  height: 3.7em;
+  object-fit: cover;
+  filter: blur(6px);
+  position: absolute;
+  opacity: 0.6;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.itemone {
+  width: 3.6rem;
+  height: 3.6rem;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.itemWrapper:hover {
+  border-color: #007bff;
+}
+
+.itemCount {
+  display: flex;
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -15px;
+  border-radius: 50%;
+  font-size: 0.9em;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  height: 140%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.buttonsContainer button {
+  width: 100px;
+  max-width: 80%;
+  padding: 0;
+  height: 35px;
+}
+
+.gamesHeader {
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  gap: 7px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.noHistory {
+  color: white;
+}
+
+.loaderWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loader {
+  border: 6px solid #191d35;
+  border-radius: 50%;
+  border-top: 6px solid #297bff;
+  width: 45px;
+  height: 45px;
+  animation: spin 0.45s linear infinite;
+  opacity: 0.9;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s forwards;
+}
+
+.shrinkOut {
+  animation: shrinkOut 0.2s forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrinkOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes puls {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .modalbackgroundhistory {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .closeButton {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .historyTitle {
+    margin-top: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .flip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+  }
+
+  .players {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .coin .avatar {
+    border: none;
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .vs {
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    color: #b0b8c1;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px !important;
+  }
+
+  .item {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .itemholder {
+    margin-left: 1.6rem;
+    margin-right: 0;
+  }
+
+  .value {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .value p {
+    display: none;
+  }
+
+  .winnerCoin {
+    display: none;
+  }
+
+  .gamesHeader {
+    margin-top: 0;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 0.4rem;
+    flex-grow: 1;
+  }
+
+  .value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    padding: 2px;
+  }
+
+  .topRow {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-start;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .value {
+    color: #ccc;
+    margin: 0 !important;
+    font-size: 14px;
+  }
+
+  .coinflips:last-child {
+    margin-bottom: 2rem;
+  }
+}

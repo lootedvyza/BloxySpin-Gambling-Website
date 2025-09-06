@@ -1,0 +1,317 @@
+.blurbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modalbackgroundlogin {
+  background-color: #131520;
+  border: 1px solid #181a28;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 600px;
+  color: #f0f4ff;
+  animation: modalOpen 0.3s forwards;
+  overflow-y: auto;
+  max-height: 90vh;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #f0f4ff;
+}
+
+.disclaimer {
+  font-size: 14px;
+  color: #8c8e9c;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: #f0f4ff;
+  font-weight: 500;
+}
+
+.inputHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  background: #181a28;
+  transition: all 0.2s ease;
+  max-width: 100%;
+  max-height: 32px;
+  height: 32px;
+}
+
+.inputHolder input {
+  background: transparent;
+  border: none;
+  color: white !important;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.inputHolder input::placeholder {
+  color: #4a4d5c;
+}
+
+.inputHolder input:focus {
+  outline: none;
+}
+
+.copyIcon {
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+  padding: 0.6rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.copyIcon:hover {
+  color: #ccc;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #8c8e9c;
+  cursor: pointer;
+}
+
+.tostext {
+  color: #0276ff;
+  margin-left: -3px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #3d5afe;
+  cursor: pointer;
+}
+
+.loaderWrapperSmall {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: -15px;
+}
+
+.loaderSmall {
+  border: 4px solid #1c1f30;
+  border-radius: 50%;
+  border-top: 4px solid #297bff;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.45s linear infinite;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s forwards;
+}
+
+.shrinkOut {
+  animation: shrinkOut 0.2s forwards;
+}
+
+.checkbox {
+  border-radius: 3px;
+  color: black;
+  border: 1px solid #0276ff;
+  background-color: transparent;
+}
+
+.checkbox:active {
+  transform: scale(0.95);
+}
+
+.checkbox[data-state="checked"] {
+  background-color: #0276ff !important;
+  border-color: #0276ff !important;
+  color: black;
+}
+
+.tostext {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrinkOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalbackgroundlogin {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    transform: none;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .closeButton {
+    top: 8px;
+    right: 12px;
+    font-size: 24px;
+  }
+
+  .inputHolder {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    min-height: 50px;
+    position: relative;
+  }
+
+  .inputHolder input {
+    font-size: 12px;
+    width: calc(100% - 30px);
+    white-space: normal;
+    overflow: visible;
+    height: auto;
+    min-height: 20px;
+    padding-right: 25px;
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .checkboxLabel {
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+
+  .tostext {
+    display: inline-block;
+    margin-top: 2px;
+    margin-left: 0;
+  }
+
+  .loginbtn {
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .copyIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px;
+  }
+}

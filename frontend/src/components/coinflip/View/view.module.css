@@ -1,0 +1,426 @@
+.blurbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modalbackgroundview {
+  background-color: #131520;
+  border: 1px solid #181a28;
+  border-radius: 5px;
+  max-width: 1000px;
+  width: 85%;
+  height: 600px;
+  padding: 0;
+  overflow: hidden;
+  animation: modalOpen 0.3s forwards;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  margin-bottom: -30px;
+}
+
+.logo {
+  max-width: 150px;
+  border-radius: 10px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+.players {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  gap: 60px;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 160px;
+}
+
+.avatarWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #181a28;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.avatar.winner {
+  border-color: #3081fc;
+}
+
+.avatar:hover {
+  border-color: #3081fc;
+}
+
+.winner {
+  border-color: gold;
+}
+
+.username {
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coin {
+  position: absolute;
+  bottom: 1px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.coin img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  margin: 20px 15px 15px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 10px;
+}
+
+.playerItems {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.totalValueContainer {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  margin: 10px 0;
+  gap: 15px;
+  margin-bottom: -5px;
+  position: sticky;
+  background: #131520;
+  z-index: 2;
+  padding: 12px 0;
+}
+
+.bobux {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.chance {
+  margin-left: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 5px 0;
+  background-color: #151723;
+  border: 1px solid #171a25;
+  border-radius: 5px;
+  padding: 12px;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.itemImageWrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.bluredimages {
+  width: 100%;
+  height: 100%;
+  filter: blur(9px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.6;
+  border-radius: 5px;
+}
+
+.normalItemImage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.itemName {
+  color: white;
+  font-weight: bold;
+}
+
+.itemValue {
+  color: #0276ff;
+  font-weight: bold;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.cancelButtonContainer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+}
+
+.cancelButtonContainer button {
+  font-weight: bold;
+}
+
+.loaderWrapperSmall {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: -15px;
+}
+
+.loaderSmall {
+  border: 4px solid #1c1f30;
+  border-radius: 50%;
+  border-top: 4px solid #297bff;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.45s linear infinite;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s forwards;
+}
+
+.shrinkOut {
+  animation: shrinkOut 0.2s forwards;
+}
+
+.gameinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.vs {
+  font-size: 45px;
+  font-weight: bold;
+  color: #555;
+  line-height: 1;
+}
+
+.gameinfo video {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  border-radius: 50%;
+}
+
+.gameid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer !important;
+}
+
+.gameidholder {
+  display: flex;
+  width: 22ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #181a28;
+  margin-bottom: -20px;
+}
+
+.gameidtag {
+  width: 22ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hashtag {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  font-size: 16;
+  font-weight: bold !important;
+  margin-right: auto;
+  filter: brightness(0) invert(1);
+  margin-right: 3px;
+}
+
+.mobilevalue {
+  display: none;
+}
+
+.pcvalue {
+  display: flex;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrinkOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 740px) {
+  .modalbackgroundview {
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 0px;
+  }
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+  .items {
+    gap: 10px;
+    margin: 15px 10px 10px;
+    width: calc(100% - 20px);
+  }
+  .gameinfo video {
+    width: 150px;
+    height: 150px;
+  }
+  .players {
+    gap: 30px;
+  }
+  .player {
+    width: 100px;
+  }
+  .vs {
+    font-size: 35px;
+  }
+  .gameinfo {
+    width: 100px;
+  }
+  .pcvalue {
+    display: none;
+  }
+  .mobilevalue {
+    display: flex;
+  }
+}

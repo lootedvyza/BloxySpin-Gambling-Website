@@ -1,0 +1,45 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  border-left: 1px solid #252839;
+  border-top: 1px solid #252839;
+  border-bottom: 1px solid #252839;
+  width: 100%;
+  gap: 0.5rem;
+  background-color: #171925;
+  background-size: cover;
+  z-index: 10;
+  overflow-y: auto;
+  animation: slideIn 0.2s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .chat {
+    right: 0;
+    width: 35% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .chat {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chat {
+    display: none;
+  }
+}

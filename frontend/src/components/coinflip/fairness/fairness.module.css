@@ -1,0 +1,172 @@
+.blurbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modalbgfair {
+  background-color: #131520;
+  border: 1px solid #181a28;
+  border-radius: 5px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 320px;
+  color: #f0f4ff;
+  overflow-y: auto;
+  animation: modalOpen 0.3s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.header {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.section {
+  margin-bottom: 1.4rem;
+}
+
+.sectionTitle {
+  display: block;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.inputHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 1rem;
+  border-radius: 5px;
+  background: #181a28;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+.inputHolder input {
+  background: transparent;
+  border: none;
+  color: white !important;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.copyIcon {
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+  padding: 0.6rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.copyIcon:hover {
+  color: #ccc;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s forwards;
+}
+
+.shrinkOut {
+  animation: shrinkOut 0.2s forwards;
+}
+
+.valueText {
+  max-width: 22ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: monospace;
+  flex-shrink: 1;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrinkOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .modalbgfair {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 0;
+  }
+
+  .header {
+    margin-top: 20px;
+  }
+
+  .inputHolder {
+    margin-left: -11px;
+    max-width: 100%;
+    width: 98%;
+  }
+
+  .closeButton {
+    margin-top: 30px;
+  }
+}

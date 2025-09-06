@@ -1,0 +1,286 @@
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 18, 29);
+  width: 104%;
+  height: 30%;
+  border: 1px solid #181a28;
+  border-radius: 5px;
+  position: relative;
+  padding: 0;
+  margin-left: -6px;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+}
+
+.carouselContent {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.carouselItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: center;
+  height: 100%;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+
+.giveawayWrapper {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  margin-top: -15px;
+  color: #fff;
+  height: 100%;
+  min-height: 220px;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.giveawayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.starterusername {
+  cursor: pointer;
+  color: #1e90ff;
+  font-size: 12px;
+}
+
+.entries {
+  font-size: 10px;
+  color: #aaa;
+}
+
+.itemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 6px;
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.itemImageWrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.bluritem {
+  width: 110%;
+  height: 110%;
+  filter: blur(5px);
+  position: absolute;
+  top: -5%;
+  left: -5%;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: contain;
+}
+
+.itemDetails {
+  text-align: left;
+  flex: 1;
+  overflow: hidden;
+}
+
+.itemDetails h3 {
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.itemValueWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bobuxImage {
+  width: 16px;
+  height: 16px;
+}
+
+.itemValue {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.timerContainer {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.timerContainer .timer {
+  font-size: 16px;
+}
+
+.timerContainer .winner {
+  font-size: 16px;
+  color: #1e90ff;
+}
+
+.joinButton {
+  height: 40px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-10%);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  transform: scale(1.2);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.navButton:hover {
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.loaderWrapperSmall {
+  display: inline-block;
+  margin-right: 7px;
+  margin-left: -15px;
+}
+
+.loaderSmall {
+  border: 4px solid #1c1f30;
+  border-radius: 50%;
+  border-top: 4px solid #297bff;
+  width: 15px;
+  height: 15px;
+  animation: spin 0.45s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .carouselContainer {
+    height: 280px;
+  }
+
+  .carouselItem {
+    padding: 10px;
+  }
+
+  .giveawayWrapper {
+    width: 95%;
+    min-height: 240px;
+  }
+
+  .itemImageWrapper {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .itemDetails h3 {
+    font-size: 14px;
+    max-width: 120px;
+  }
+
+  .timerContainer .timer,
+  .timerContainer .winner {
+    font-size: 14px;
+  }
+
+  .joinButton {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .giveawayWrapper {
+    padding: 8px;
+    min-height: 230px;
+  }
+
+  .itemImageWrapper {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .itemDetails h3 {
+    font-size: 13px;
+    max-width: 100px;
+  }
+
+  .timerContainer .timer,
+  .timerContainer .winner {
+    font-size: 13px;
+  }
+
+  .joinButton {
+    height: 36px;
+    font-size: 13px;
+    max-width: 200px;
+  }
+}
